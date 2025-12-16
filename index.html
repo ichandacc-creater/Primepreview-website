@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prime Preview — Store</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <h1 class="brand">Prime Preview</h1>
+      <nav class="nav">
+        <a href="index.html">Store</a>
+        <a href="cart.html" class="cart-link">Cart (<span id="cart-count">0</span>)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>Curated picks: Stanley cups, shoes, and iPhones</h2>
+      <p>Quality essentials—clean, simple, and ready to ship.</p>
+    </section>
+
+    <!-- Shoes & Cups -->
+    <section class="grid">
+      <!-- Stanley Cup -->
+      <article class="card" data-id="stanley-cup" data-name="Stanley Cup" data-price="650" data-image="assets/images/stanley-cup.jpg">
+        <img src="assets/images/stanley-cup.jpg" alt="Stanley Cup" />
+        <div class="card-body">
+          <h3>Stanley Cup</h3>
+          <p class="price">K650</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+
+      <!-- Nike TN Shoes -->
+      <article class="card" data-id="nike-tn" data-name="Nike TN Shoes" data-price="1000" data-image="assets/images/nike-tn.jpg">
+        <img src="assets/images/nike-tn.jpg" alt="Nike TN Shoes" />
+        <div class="card-body">
+          <h3>Nike TN Shoes</h3>
+          <p class="price">K1,000</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+
+      <!-- Asics Runners -->
+      <article class="card" data-id="asics-runners" data-name="ASICS Runners" data-price="1000" data-image="assets/images/asics-runners.jpg">
+        <img src="assets/images/asics-runners.jpg" alt="ASICS Runners" />
+        <div class="card-body">
+          <h3>ASICS Runners</h3>
+          <p class="price">K1,000</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+    </section>
+
+    <!-- iPhones (no prices) -->
+    <section class="section-title">
+      <h2>iPhones (latest to iPhone 7)</h2>
+      <p>Explore models without prices shown. Add to cart to inquire.</p>
+    </section>
+    <section class="grid">
+      <article class="card" data-id="iphone-15" data-name="iPhone 15" data-price="" data-image="assets/images/iphone-15.jpg">
+        <img src="assets/images/iphone-15.jpg" alt="iPhone 15" />
+        <div class="card-body">
+          <h3>iPhone 15</h3>
+          <p class="price muted">Price on inquiry</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+
+      <article class="card" data-id="iphone-14" data-name="iPhone 14" data-price="" data-image="assets/images/iphone-14.jpg">
+        <img src="assets/images/iphone-14.jpg" alt="iPhone 14" />
+        <div class="card-body">
+          <h3>iPhone 14</h3>
+          <p class="price muted">Price on inquiry</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+
+      <article class="card" data-id="iphone-13" data-name="iPhone 13" data-price="" data-image="assets/images/iphone-13.jpg">
+        <img src="assets/images/iphone-13.jpg" alt="iPhone 13" />
+        <div class="card-body">
+          <h3>iPhone 13</h3>
+          <p class="price muted">Price on inquiry</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+
+      <article class="card" data-id="iphone-12" data-name="iPhone 12" data-price="" data-image="assets/images/iphone-12.jpg">
+        <img src="assets/images/iphone-12.jpg" alt="iPhone 12" />
+        <div class="card-body">
+          <h3>iPhone 12</h3>
+          <p class="price muted">Price on inquiry</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+
+      <article class="card" data-id="iphone-11" data-name="iPhone 11" data-price="" data-image="assets/images/iphone-11.jpg">
+        <img src="assets/images/iphone-11.jpg" alt="iPhone 11" />
+        <div class="card-body">
+          <h3>iPhone 11</h3>
+          <p class="price muted">Price on inquiry</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+
+      <article class="card" data-id="iphone-x" data-name="iPhone X" data-price="" data-image="assets/images/iphone-x.jpg">
+        <img src="assets/images/iphone-x.jpg" alt="iPhone X" />
+        <div class="card-body">
+          <h3>iPhone X</h3>
+          <p class="price muted">Price on inquiry</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+
+      <article class="card" data-id="iphone-8" data-name="iPhone 8" data-price="" data-image="assets/images/iphone-8.jpg">
+        <img src="assets/images/iphone-8.jpg" alt="iPhone 8" />
+        <div class="card-body">
+          <h3>iPhone 8</h3>
+          <p class="price muted">Price on inquiry</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+
+      <article class="card" data-id="iphone-7" data-name="iPhone 7" data-price="" data-image="assets/images/iphone-7.jpg">
+        <img src="assets/images/iphone-7.jpg" alt="iPhone 7" />
+        <div class="card-body">
+          <h3>iPhone 7</h3>
+          <p class="price muted">Price on inquiry</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© Prime Preview</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
+<footer class="footer">
+  <div class="container">
+    <p>© Prime Preview</p>
+    <p>📞 +260 765 660 0447</p>
+    <p>📷 Follow us on Instagram: 
+      <a href="https://instagram.com/primepreviewac" target="_blank">@primepreviewac</a>
+    </p>
+  </div>
+</footer>
+
