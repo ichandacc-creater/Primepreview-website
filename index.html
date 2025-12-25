@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+x
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -7,13 +8,25 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
+
+<!-- Firebase SDKs (Modular v9) -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+  import { getAuth } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+  import { getFirestore } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+  window.firebaseModules = { initializeApp, getAuth, getFirestore };
+</script>
+
+<!-- Your app logic -->
+<script type="module" src="script.js"></script>
+
 <body>
   <header class="header">
     <div class="container header-inner">
       <h1 class="brand">Prime Preview</h1>
       <nav class="nav">
         <a href="index.html">Store</a>
-        <a href="cart.html" class="cart-link">Cart (<span id="cart-count">0</span>)</a>
+        <a href="cart.html" class="cart-link">Cart (<span id="cart-count">0</span>)</span></a>
       </nav>
     </div>
   </header>
@@ -54,83 +67,368 @@
       </article>
     </section>
 
-    <!-- iPhones (no prices) -->
+    <!-- iPhones -->
     <section class="section-title">
-      <h2>iPhones (latest to iPhone 7)</h2>
+      <h2>iPhones (8 through 17, including SE and Air)</h2>
       <p>Explore models without prices shown. Add to cart to inquire.</p>
     </section>
+
     <section class="grid">
-      <article class="card" data-id="iphone-15" data-name="iPhone 15" data-price="" data-image="assets/images/iphone-15.jpg">
-        <img src="assets/images/iphone-15.jpg" alt="iPhone 15" />
-        <div class="card-body">
-          <h3>iPhone 15</h3>
-          <p class="price muted">Price on inquiry</p>
-          <button class="btn add-to-cart">Add to cart</button>
-        </div>
-      </article>
 
-      <article class="card" data-id="iphone-14" data-name="iPhone 14" data-price="" data-image="assets/images/iphone-14.jpg">
-        <img src="assets/images/iphone-14.jpg" alt="iPhone 14" />
-        <div class="card-body">
-          <h3>iPhone 14</h3>
-          <p class="price muted">Price on inquiry</p>
-          <button class="btn add-to-cart">Add to cart</button>
-        </div>
-      </article>
-
-      <article class="card" data-id="iphone-13" data-name="iPhone 13" data-price="" data-image="assets/images/iphone-13.jpg">
-        <img src="assets/images/iphone-13.jpg" alt="iPhone 13" />
-        <div class="card-body">
-          <h3>iPhone 13</h3>
-          <p class="price muted">Price on inquiry</p>
-          <button class="btn add-to-cart">Add to cart</button>
-        </div>
-      </article>
-
-      <article class="card" data-id="iphone-12" data-name="iPhone 12" data-price="" data-image="assets/images/iphone-12.jpg">
-        <img src="assets/images/iphone-12.jpg" alt="iPhone 12" />
-        <div class="card-body">
-          <h3>iPhone 12</h3>
-          <p class="price muted">Price on inquiry</p>
-          <button class="btn add-to-cart">Add to cart</button>
-        </div>
-      </article>
-
-      <article class="card" data-id="iphone-11" data-name="iPhone 11" data-price="" data-image="assets/images/iphone-11.jpg">
-        <img src="assets/images/iphone-11.jpg" alt="iPhone 11" />
-        <div class="card-body">
-          <h3>iPhone 11</h3>
-          <p class="price muted">Price on inquiry</p>
-          <button class="btn add-to-cart">Add to cart</button>
-        </div>
-      </article>
-
-      <article class="card" data-id="iphone-x" data-name="iPhone X" data-price="" data-image="assets/images/iphone-x.jpg">
-        <img src="assets/images/iphone-x.jpg" alt="iPhone X" />
-        <div class="card-body">
-          <h3>iPhone X</h3>
-          <p class="price muted">Price on inquiry</p>
-          <button class="btn add-to-cart">Add to cart</button>
-        </div>
-      </article>
-
+      <!-- iPhone 8 & 8 Plus -->
       <article class="card" data-id="iphone-8" data-name="iPhone 8" data-price="" data-image="assets/images/iphone-8.jpg">
         <img src="assets/images/iphone-8.jpg" alt="iPhone 8" />
         <div class="card-body">
           <h3>iPhone 8</h3>
           <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 64GB, 128GB</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+      <article class="card" data-id="iphone-8-plus" data-name="iPhone 8 Plus" data-price="" data-image="assets/images/iphone-8-plus.jpg">
+        <img src="assets/images/iphone-8-plus.jpg" alt="iPhone 8 Plus" />
+        <div class="card-body">
+          <h3>iPhone 8 Plus</h3>
+          <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 64GB, 128GB</p>
           <button class="btn add-to-cart">Add to cart</button>
         </div>
       </article>
 
-      <article class="card" data-id="iphone-7" data-name="iPhone 7" data-price="" data-image="assets/images/iphone-7.jpg">
-        <img src="assets/images/iphone-7.jpg" alt="iPhone 7" />
+      <!-- iPhone X -->
+      <article class="card" data-id="iphone-x" data-name="iPhone X" data-price="" data-image="assets/images/iphone-x.jpg">
+        <img src="assets/images/iphone-x.jpg" alt="iPhone X" />
         <div class="card-body">
-          <h3>iPhone 7</h3>
+          <h3>iPhone X</h3>
           <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 64GB, 256GB</p>
           <button class="btn add-to-cart">Add to cart</button>
         </div>
       </article>
+
+      <!-- iPhone XS & XS Max -->
+      <article class="card" data-id="iphone-xs" data-name="iPhone XS" data-price="" data-image="assets/images/iphone-xs.jpg">
+        <img src="assets/images/iphone-xs.jpg" alt="iPhone XS" />
+        <div class="card-body">
+          <h3>iPhone XS</h3>
+          <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 64GB, 256GB</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+      <article class="card" data-id="iphone-xs-max" data-name="iPhone XS Max" data-price="" data-image="assets/images/iphone-xs-max.jpg">
+        <img src="assets/images/iphone-xs-max.jpg" alt="iPhone XS Max" />
+        <div class="card-body">
+          <h3>iPhone XS Max</h3>
+          <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 64GB, 256GB</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+
+      <!-- iPhone XR -->
+      <article class="card" data-id="iphone-xr" data-name="iPhone XR" data-price="" data-image="assets/images/iphone-xr.jpg">
+        <img src="assets/images/iphone-xr.jpg" alt="iPhone XR" />
+        <div class="card-body">
+          <h3>iPhone XR</h3>
+          <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 64GB, 128GB</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+
+      <!-- iPhone 11, 11 Pro, 11 Pro Max -->
+      <article class="card" data-id="iphone-11" data-name="iPhone 11" data-price="" data-image="assets/images/iphone-11.jpg">
+        <img src="assets/images/iphone-11.jpg" alt="iPhone 11" />
+        <div class="card-body">
+          <h3>iPhone 11</h3>
+          <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 64GB, 128GB</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+      <article class="card" data-id="iphone-11-pro" data-name="iPhone 11 Pro" data-price="" data-image="assets/images/iphone-11-pro.jpg">
+        <img src="assets/images/iphone-11-pro.jpg" alt="iPhone 11 Pro" />
+        <div class="card-body">
+          <h3>iPhone 11 Pro</h3>
+          <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 64GB, 256GB</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+      <article class="card" data-id="iphone-11-pro-max" data-name="iPhone 11 Pro Max" data-price="" data-image="assets/images/iphone-11-pro-max.jpg">
+        <img src="assets/images/iphone-11-pro-max.jpg" alt="iPhone 11 Pro Max" />
+        <div class="card-body">
+          <h3>iPhone 11 Pro Max</h3>
+          <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 64GB, 256GB</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+
+      <!-- iPhone SE (2nd gen) -->
+      <article class="card" data-id="iphone-se-2" data-name="iPhone SE (2nd gen)" data-price="" data-image="assets/images/iphone-se-2.jpg">
+        <img src="assets/images/iphone-se-2.jpg" alt="iPhone SE (2nd gen)" />
+        <div class="card-body">
+          <h3>iPhone SE (2nd gen)</h3>
+          <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 64GB, 128GB</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+
+      <!-- iPhone 12 & 12 Pro -->
+      <article class="card" data-id="iphone-12" data-name="iPhone 12" data-price="" data-image="assets/images/iphone-12.jpg">
+        <img src="assets/images/iphone-12.jpg" alt="iPhone 12" />
+        <div class="card-body">
+          <h3>iPhone 12</h3>
+          <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 64GB, 128GB, 256GB</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+      <article class="card" data-id="iphone-12-pro" data-name="iPhone 12 Pro" data-price="" data-image="assets/images/iphone-12-pro.jpg">
+        <img src="assets/images/iphone-12-pro.jpg" alt="iPhone 12 Pro" />
+        <div class="card-body">
+          <h3>iPhone 12 Pro</h3>
+          <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 128GB, 256GB, 512GB</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+
+      <!-- iPhone 12 mini & 12 Pro Max -->
+      <article class="card" data-id="iphone-12-mini" data-name="iPhone 12 mini" data-price="" data-image="assets/images/iphone-12-mini.jpg">
+        <img src="assets/images/iphone-12-mini.jpg" alt="iPhone 12 mini" />
+        <div class="card-body">
+          <h3>iPhone 12 mini</h3>
+          <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 64GB, 128GB, 256GB</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+      <article class="card" data-id="iphone-12-pro-max" data-name="iPhone 12 Pro Max" data-price="" data-image="assets/images/iphone-12-pro-max.jpg">
+        <img src="assets/images/iphone-12-pro-max.jpg" alt="iPhone 12 Pro Max" />
+        <div class="card-body">
+          <h3>iPhone 12 Pro Max</h3>
+          <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 128GB, 256GB, 512GB</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+
+      <!-- iPhone 13 mini, 13, 13 Pro, 13 Pro Max -->
+      <article class="card" data-id="iphone-13-mini" data-name="iPhone 13 mini" data-price="" data-image="assets/images/iphone-13-mini.jpg">
+        <img src="assets/images/iphone-13-mini.jpg" alt="iPhone 13 mini" />
+        <div class="card-body">
+          <h3>iPhone 13 mini</h3>
+          <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 128GB, 256GB</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+      <article class="card" data-id="iphone-13" data-name="iPhone 13" data-price="" data-image="assets/images/iphone-13.jpg">
+        <img src="assets/images/iphone-13.jpg" alt="iPhone 13" />
+        <div class="card-body">
+          <h3>iPhone 13</h3>
+          <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 128GB, 256GB, 512GB</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+      <article class="card" data-id="iphone-13-pro" data-name="iPhone 13 Pro" data-price="" data-image="assets/images/iphone-13-pro.jpg">
+        <img src="assets/images/iphone-13-pro.jpg" alt="iPhone 13 Pro" />
+        <div class="card-body">
+          <h3>iPhone 13 Pro</h3>
+          <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 128GB, 256GB, 512GB, 1TB</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+      <article class="card" data-id="iphone-13-pro-max" data-name="iPhone 13 Pro Max" data-price="" data-image="assets/images/iphone-13-pro-max.jpg">
+        <img src="assets/images/iphone-13-pro-max.jpg" alt="iPhone 13 Pro Max" />
+        <div class="card-body">
+          <h3>iPhone 13 Pro Max</h3>
+          <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 128GB, 256GB, 512GB, 1TB</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+
+      <!-- iPhone SE (3rd gen) -->
+      <article class="card" data-id="iphone-se-3" data-name="iPhone SE (3rd gen)" data-price="" data-image="assets/images/iphone-se-3.jpg">
+        <img src="assets/images/iphone-se-3.jpg" alt="iPhone SE (3rd gen)" />
+        <div class="card-body">
+          <h3>iPhone SE (3rd gen)</h3>
+          <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 64GB, 128GB</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+
+      <!-- iPhone 14, 14 Plus, 14 Pro, 14 Pro Max -->
+      <article class="card" data-id="iphone-14" data-name="iPhone 14" data-price="" data-image="assets/images/iphone-14.jpg">
+        <img src="assets/images/iphone-14.jpg" alt="iPhone 14" />
+        <div class="card-body">
+          <h3>iPhone 14</h3>
+          <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 128GB, 256GB, 512GB</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+      <article class="card" data-id="iphone-14-plus" data-name="iPhone 14 Plus" data-price="" data-image="assets/images/iphone-14-plus.jpg">
+        <img src="assets/images/iphone-14-plus.jpg" alt="iPhone 14 Plus" />
+        <div class="card-body">
+          <h3>iPhone 14 Plus</h3>
+          <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 128GB, 256GB, 512GB</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+      <article class="card" data-id="iphone-14-pro" data-name="iPhone 14 Pro" data-price="" data-image="assets/images/iphone-14-pro.jpg">
+        <img src="assets/images/iphone-14-pro.jpg" alt="iPhone 14 Pro" />
+        <div class="card-body">
+          <h3>iPhone 14 Pro</h3>
+          <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 128GB, 256GB, 512GB, 1TB</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+      <article class="card" data-id="iphone-14-pro-max" data-name="iPhone 14 Pro Max" data-price="" data-image="assets/images/iphone-14-pro-max.jpg">
+        <img src="assets/images/iphone-14-pro-max.jpg" alt="iPhone 14 Pro Max" />
+        <div class="card-body">
+          <h3>iPhone 14 Pro Max</h3>
+          <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 128GB, 256GB, 512GB, 1TB</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+
+      <!-- iPhone 15, 15 Plus, 15 Pro, 15 Pro Max -->
+      <article class="card" data-id="iphone-15" data-name="iPhone 15" data-price="" data-image="assets/images/iphone-15.jpg">
+        <img src="assets/images/iphone-15.jpg" alt="iPhone 15" />
+        <div class="card-body">
+          <h3>iPhone 15</h3>
+          <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 128GB, 256GB</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+      <article class="card" data-id="iphone-15-plus" data-name="iPhone 15 Plus" data-price="" data-image="assets/images/iphone-15-plus.jpg">
+        <img src="assets/images/iphone-15-plus.jpg" alt="iPhone 15 Plus" />
+        <div class="card-body">
+          <h3>iPhone 15 Plus</h3>
+          <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 128GB, 256GB</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+      <article class="card" data-id="iphone-15-pro" data-name="iPhone 15 Pro" data-price="" data-image="assets/images/iphone-15-pro.jpg">
+        <img src="assets/images/iphone-15-pro.jpg" alt="iPhone 15 Pro" />
+        <div class="card-body">
+          <h3>iPhone 15 Pro</h3>
+          <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 128GB, 256GB, 512GB, 1TB</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+      <article class="card" data-id="iphone-15-pro-max" data-name="iPhone 15 Pro Max" data-price="" data-image="assets/images/iphone-15-pro-max.jpg">
+        <img src="assets/images/iphone-15-pro-max.jpg" alt="iPhone 15 Pro Max" />
+        <div class="card-body">
+          <h3>iPhone 15 Pro Max</h3>
+          <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 256GB, 512GB, 1TB</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+
+      <!-- iPhone 16, 16 Plus, 16 Pro, 16 Pro Max -->
+      <article class="card" data-id="iphone-16" data-name="iPhone 16" data-price="" data-image="assets/images/iphone-16.jpg">
+        <img src="assets/images/iphone-16.jpg" alt="iPhone 16" />
+        <div class="card-body">
+          <h3>iPhone 16</h3>
+          <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 128GB, 256GB</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+      <article class="card" data-id="iphone-16-plus" data-name="iPhone 16 Plus" data-price="" data-image="assets/images/iphone-16-plus.jpg">
+        <img src="assets/images/iphone-16-plus.jpg" alt="iPhone 16 Plus" />
+        <div class="card-body">
+          <h3>iPhone 16 Plus</h3>
+          <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 128GB, 256GB</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+      <article class="card" data-id="iphone-16-pro" data-name="iPhone 16 Pro" data-price="" data-image="assets/images/iphone-16-pro.jpg">
+        <img src="assets/images/iphone-16-pro.jpg" alt="iPhone 16 Pro" />
+        <div class="card-body">
+          <h3>iPhone 16 Pro</h3>
+          <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 256GB, 512GB, 1TB</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+      <article class="card" data-id="iphone-16-pro-max" data-name="iPhone 16 Pro Max" data-price="" data-image="assets/images/iphone-16-pro-max.jpg">
+        <img src="assets/images/iphone-16-pro-max.jpg" alt="iPhone 16 Pro Max" />
+        <div class="card-body">
+          <h3>iPhone 16 Pro Max</h3>
+          <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 256GB, 512GB, 1TB</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+
+      <!-- iPhone 16e -->
+      <article class="card" data-id="iphone-16e" data-name="iPhone 16e" data-price="" data-image="assets/images/iphone-16e.jpg">
+        <img src="assets/images/iphone-16e.jpg" alt="iPhone 16e" />
+        <div class="card-body">
+          <h3>iPhone 16e</h3>
+          <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 128GB, 256GB</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+
+      <!-- iPhone 17, iPhone Air, 17 Pro, 17 Pro Max -->
+      <article class="card" data-id="iphone-17" data-name="iPhone 17" data-price="" data-image="assets/images/iphone-17.jpg">
+        <img src="assets/images/iphone-17.jpg" alt="iPhone 17" />
+        <div class="card-body">
+          <h3>iPhone 17</h3>
+          <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 128GB, 256GB</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+      <article class="card" data-id="iphone-air" data-name="iPhone Air" data-price="" data-image="assets/images/iphone-air.jpg">
+        <img src="assets/images/iphone-air.jpg" alt="iPhone Air" />
+        <div class="card-body">
+          <h3>iPhone Air</h3>
+          <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 128GB, 256GB</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+      <article class="card" data-id="iphone-17-pro" data-name="iPhone 17 Pro" data-price="" data-image="assets/images/iphone-17-pro.jpg">
+        <img src="assets/images/iphone-17-pro.jpg" alt="iPhone 17 Pro" />
+        <div class="card-body">
+          <h3>iPhone 17 Pro</h3>
+          <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 256GB, 512GB, 1TB</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+      <article class="card" data-id="iphone-17-pro-max" data-name="iPhone 17 Pro Max" data-price="" data-image="assets/images/iphone-17-pro-max.jpg">
+        <img src="assets/images/iphone-17-pro-max.jpg" alt="iPhone 17 Pro Max" />
+        <div class="card-body">
+          <h3>iPhone 17 Pro Max</h3>
+          <p class="price muted">Price on inquiry</p>
+          <p class="storage">Storage: 256GB, 512GB, 1TB</p>
+          <button class="btn add-to-cart">Add to cart</button>
+        </div>
+      </article>
+
     </section>
   </main>
 
@@ -139,7 +437,7 @@
       <p>© Prime Preview</p>
       <p>📞 +260 765 660 0447</p>
       <p>
-        <i class="fab fa-instagram" style="color:#D4AF37; margin-right:6px;"></i>
+        <i class="fab fa-instagram" style="color:#000000; margin-right:6px;"></i>
         <a href="https://instagram.com/primepreviewac" target="_blank">@primepreviewac</a>
       </p>
     </div>
@@ -148,3 +446,4 @@
   <script src="app.js"></script>
 </body>
 </html>
+<div class="cart-summary"> <span>Total:</span> <span id="cart-total">K0</span> </div> <button id="clear-cart" class="btn outline">Clear Cart</button>
