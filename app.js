@@ -57,8 +57,8 @@ const stanleyProducts = [
 ];
 
 const clothingProducts = [
-  { id:'shirt1', brand:'clothing&Shoes', title:'Prime Preview T‑Shirt', price: 1000, img:'assets/asics.jpg' },
-  { id:'hoodie1', brand:'clothing&Shoes', title:'Prime Hoodie', price: 1000, img:'assets/TN.jpg' },
+  { id:'shirt1', brand:'clothing&Shoes', title:'Asics', price: 1000, img:'assets/asics.jpg' },
+  { id:'hoodie1', brand:'clothing&Shoes', title:'Nike TNs', price: 1000, img:'assets/TN.jpg' },
 ];
 
 const accessoriesProducts = [
@@ -199,4 +199,5 @@ document.addEventListener('change', e => {
 // ---------- Init ----------
 renderProducts();
 renderCart();
+
 
